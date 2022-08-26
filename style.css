@@ -1,0 +1,261 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+    font-size:0.95rem;
+    color: ;
+}
+body {
+    overflow-x: hidden;
+    margin: 0px;
+    background: rgb(240,240,240) ;
+}
+header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+header h1{
+    font-size: 2em;
+}
+nav {
+    width: 100vw;
+    margin-top: 10vh;
+    padding-top: 10px;
+    background-color:rgba(200,200,200 0.9) ;
+    backdrop-filter: blur(5px);
+}
+ul {
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 40px;
+}
+li {
+    float: left;
+}     
+#lol {
+    font-size: 0.5em;
+}
+li a {
+    padding: 15px 17px;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black;
+    transition: 0.25s;
+    border-radius: 10px;
+}
+li a:hover {
+    background-color: #00aaffcb;
+    color: #ffd500ad;
+}
+#whoweare {
+    display: grid;
+    place-content: center;
+}
+.whoweare img {
+    width: 50%;
+    margin: auto;
+}
+#navbar {
+    z-index: 1;
+}
+.whoweare{
+    width: 90vw;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.container:hover {
+    transition: 1s;
+    background:#00aaffcb;
+}
+
+.container {
+    display: grid; 
+    place-content: center;
+    background-color: rgba(red, green, blue, alpha);
+    background: radial-gradient(circle, #00aaffcb 0%, #ffd500ad 100%);
+    backdrop-filter: blur(5px);
+    padding: 30px 30px;
+    border-radius: 2em;
+}
+.container p {
+    font-size: 1em;
+}
+.container h2 {
+    font-size: 1.25em;
+}
+
+.container button {
+    background-color: rgba(255,255, 255, 0.1);
+    border: none;
+    
+}
+footer {
+    font-size: 1em;
+    display: flex ;
+    background:#000;
+    background-color: rgba(55,55, 55, 0.6);
+}
+footer div{
+    margin: auto;
+}
+#form{
+    display: grid;
+    place-content: center;
+}
+#id {
+    border: none;
+    background: none;
+    border-bottom: 1px solid black;
+}
+#id:focus {
+    outline: none;
+    border-bottom: 2px solid #00aaffcb;
+}
+#info {
+    padding-top: 5vh;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row-gap: 5vh;
+    font-size: 3em;
+}
+#info p {
+    font-size: 1.2em;
+}
+.cb{
+    border: 5px solid black;
+    background: none;
+    visibility: hidden;
+}
+#home {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+  }
+
+#AboutUs {
+    display: grid;
+    place-content: center;
+}
+#AboutUs img {
+    width: 60%;
+    margin: auto;
+    margin-top: 4vh;
+    border-radius: 2em;
+}
+#AboutUs p {
+    width: 90%;
+    margin: auto;
+}
+#home h1 div{
+    display: inline-block;
+    font-size: 2em;
+}
+#home h1 div:nth-of-type(even){
+    color: #00aafffe;
+}
+#home h1 div:nth-of-type(odd){
+    color: #ebc717;
+}
+#scroll {
+    font-size: 1em;
+    animation: infinite updown 1s;
+}
+#opening {
+    display: grid;
+    place-content: center;
+}
+#opening h2 {
+    font-size:1.5em;
+}
+#opening p {
+    width: 100%;
+    padding-top: 0.6em;
+}
+#discounted {
+    display: grid;
+    place-content: center;
+}
+table, th,tr, td {
+    border: 1px solid black;
+}
+td {
+    text-align: center;
+}
+th {
+    background-color: #00aaffcb;
+    color: #ffd500;
+}
+.title {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.title h1 {
+    color: #00aaffcb;
+    border: transparent 3px #ffd500ad;
+    background: #ffd500ad;
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 2em;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    
+}
+.booking {
+    width: 80%;
+    padding: 40px;
+    margin: auto;
+    border-radius: 30px;
+    background:radial-gradient(circle, #00aaffcb 0%, #ffd500ad 100%);
+    margin-bottom: 7vh;
+    height: 20vh;
+}
+.booking p {
+    font-size: 1.3em;
+}
+
+.booking li {
+    list-style-type: none;
+    float: right;
+    padding: 13px 15px;
+    margin-right: 24vw;
+    background-color: black;
+    border-radius : 1em;
+    
+}
+.booking li a {
+    color: white;
+}
+.booking li a:hover {
+    background-color: white;
+    color: black;
+}
+#advice {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 80%;
+}
+
+#timeslot {
+    width: 30vw;
+    padding: 30px;
+}
+#morninglabel, #noonlabel, #afternoonlabel {
+    color: #00aaffcb;
+    padding: 30px;
+    background-color: #ffd500;
+    border-radius: 1em;
+}
+label {
+    font-size: 0.9em;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <ul >
+        <li><a href="#home">Home</a></li>
+        <li><a href="#AboutUs">About Us</a></li>
+        <li><a href="#whoweare">Who We Are</a></li>
+        <li><a href="">Contact</a></li>
+    </ul></header>
+    <main id="form">
+        <form method="POST" id="info">
+            <label for="">Patient ID</label>
+            <input onkeyup="changeuppercase()" onchange="retrievedata()" id="id"type="text" required>
+            <label for="">Date</label>
+            <div id="date"></div>
+            <label for="">Time</label>
+            <div id="timeslot" onchange="checkbox()">
+                <input class="cb" id="morning" type="checkbox">
+                <label for="morning" id="morninglabel">9am-12pm</label>
+                <input class="cb" id="noon" type="checkbox">
+                <label for="noon" id="noonlabel">12pm-3pm</label>
+                <input class="cb" id="afternoon" type="checkbox">
+                <label for="afternoon" id="afternoonlabel">3pm-6pm</label>
+            </div>
+            <label for="">Reasons</label>
+            <select onchange="changereason()" name="" id="reason" required>
+                <option value="">Please/Select</option>
+                <option value="1">ChildHood Vaccination Slot</option>
+                <option value="2">Influenza Shot</option>
+                <option value="3">Covid Booster Shot</option>
+                <option value="4">Blood Test</option>
+            </select>
+            <div id="advice"></div>
+            <input type="submit" name="" id="">
+        </form>
+        <div id="msg"></div>
+    </main>
+    <script>
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        var now = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("date").innerHTML = "<input id='date' type='date' min='" + now + "'required>"
+        function retrievedata() {
+            var errormsg = "";
+            var passno = 0;
+            var number = document.getElementById("id").value;
+            var numberlist= number.split('')
+            var firstname = numberlist[0] + numberlist[1];
+            if((/[a-zA-Z]/).test(firstname) == true){
+                passno +=1;
+            }
+            else {
+                errormsg += " The first two number must be a letter"
+            }
+            var userno = parseInt(numberlist[2]);
+            for(let i = 3   ; i< numberlist.length -1; i++){
+                userno = userno + parseInt(numberlist[i])
+            }
+            if(isNaN(userno) == true){
+                errormsg += " please be a number"
+            }
+            else{
+                passno+=1
+            }
+            var letterno = userno % 26
+            var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+            var letter = alphabet[letterno-1]
+            if(numberlist[numberlist.length-1] == letter){
+                passno+=1
+            }
+            else {
+                errormsg += " the id calculation didn't add up"
+            }
+            if(passno == 3){
+                document.getElementById("msg").innerHTML = "<p>You have been pass</p>";
+            }
+            else {
+                document.getElementById("msg").innerHTML = "<p>" + errormsg +"</p>";
+            }
+
+
+        }
+        function changereason() {
+            var reasonno = document.getElementById("reason").value
+            console.log(reasonno)
+            var reason = ""
+            if(reasonno == 1) {
+                reason = " A disclaimer that multiple vaccines are normally administered in combination and may cause the child to be sluggish or feverous for 24 – 48 hours afterwards."      
+            }
+            if(reasonno == 2 ) {
+                reason = "The best time to get vaccinated is in April and May each year for optimal protection over the winter months.  "
+            }
+            if(reasonno == 3 ){
+                reason = "Advice that everyone should arrange to have their third shot as soon as possible and adults over the age of 30 should have their fourth shot to protect against new variant strains.  "
+            }
+            if(reasonno == 4) {
+                reason = "That some tests require some fasting ahead of time and that a staff member will advise them on this prior to the appointment"
+            }
+            document.getElementById("advice").innerHTML = "<p>" + reason + "</p>"
+        }
+        function checkbox() {
+        const cb1 = document.querySelector("#morning")
+        const cb2 = document.querySelector("#noon");
+        const cb3 = document.querySelector("#afternoon");
+        console.log(cb1)
+        if(cb1.checked == false){
+            document.getElementById("morninglabel").style.color = "#00aaffcb";
+        }
+        if(cb1.checked == true) {
+            document.getElementById("morninglabel").style.color = "black";
+        }
+        if(cb2.checked == false){
+            document.getElementById("noonlabel").style.color = "#00aaffcb";
+        }
+        if(cb2.checked == true) {
+            document.getElementById("noonlabel").style.color = "black";
+        }
+        if(cb3.checked == false){
+            document.getElementById("afternoonlabel").style.color = "#00aaffcb";
+        }
+        if(cb3.checked == true) {
+            document.getElementById("afternoonlabel").style.color = "black";
+        }
+        }
+        function changeuppercase() {
+            var letter = document.getElementById("id").value
+            console.log(letter)
+            var uppercase = letter.toUpperCase();
+            console.log(uppercase)
+            document.getElementById("id").value = uppercase
+        }
+    </script>
+</body>
+</html>

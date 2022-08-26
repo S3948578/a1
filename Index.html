@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body onload="document.body.style.opacity='1'">
+    <header></header>
+    
+    <main>
+        <article onkeypress="">
+            <header id="home">
+              <h1><div>Russel</div>&nbsp;<div> Street</div>&nbsp;<div>Dentist</div><img src="/images/Group 1.png" alt=""></h1>
+          <nav id="navbar">
+            
+         <ul >
+            <li><a href="#home">Home</a></li>
+            <li><a href="#AboutUs">About Us</a></li>
+            <li><a href="#whoweare">Who We Are</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        </nav>
+        <h1 id="scroll">Scroll Down To Find Out More</h1>
+            </header>
+            
+          </article>
+          <article id="AboutUs" onkeypress="">
+            <div class="title">
+              <h1>About us</h1>
+            </div>
+            <img src="images/aboutus.jpeg" alt="">
+            <div id="info">
+                
+                <div id="discounted">
+                <p>Russel Street Medical opened in 2020 and is located in Melbourne’s CBD at 340 Russel Street 
+                Melbourne, just opposite The Old Melbourne Jail and within walking distance of Melbourne  Central 
+                Train Station. 
+                We strive to help all  of our patients with a focus on preventative health care, a view to managing 
+                chronic health conditions with a holistic approach, and with access to a wide range of specialist care 
+                providers when needed.</p>
+                <br>
+                <p>Under partnerships, we are able to offer RMIT students & staff discounted rates. </p>
+                <table>
+                    <tr>
+                        <th>Consulation</th>
+                        <th>Normal Fee</th>
+                        <th>Rmit Member Fee</th>
+                        <th>Medicare Rebate</th>
+                    </tr>
+                    <tr>
+                        <td>Standard</td>
+                        <td>$85.00</td>
+                        <td>$60.50</td>
+                        <td>$39.75</td>
+                    </tr>
+                    <tr>
+                        <td>Long or Complex</td>
+                        <td>$130.00</td>
+                        <td>$91.00</td>
+                        <td>$76.95</td>
+                    </tr>
+                </table>
+            </div>
+                <div id="opening">
+                    <h2>Opening Hours</h2>
+                    <p>Monday 9am-6pm</p>
+                    <p>Tuesday 9am-6pm</p>
+                    <p>Wednesday 9am-6pm</p>
+                    <p>Thursday 9am-6pm</p>
+                    <p>Friday 9am-6pm</p>
+                    <p>Saturday 9am-6pm</p>
+                    <p>Sunday 9am-6pm</p>
+
+                </div>
+            </div>
+          </article>
+          <article id="whoweare">
+            <div class="title">
+                <h1>Who we are</h1>
+            </div>
+            <div class="whoweare">
+                <div class="container" id="Abigale">
+                    <img src="/images/abigale.webp" alt="">
+                        <h2>Dr. Abigale Laurentis </h2>
+                        <p>Abigale Laurentis completed her medical degree at the University of Queensland in 2013,  where she 
+                            also obtained a Bachelor of Science in Biomedicine.</p>
+                        <p>Over her training and practice, Abigale has worked in a variety of clinical  settings including 
+                            specialities at Latrobe Health. </p>
+                </div>
+                <div class="container">
+                        <img src="/images/steph.jpg" alt="an image of Dr Stephen Hill">
+                        <h2>Dr. Stephen  Hill </h2>     
+                        <p>Stephen Hill graduated from Auckland University in New Zealand in 2014,  and obtained his 
+                            Fellowship from the Royal Australian College of General Practitioners in 2017.</p>
+                        <p>Over his training and practice, Stephen worked in internal medicine at the Royal Children's Hospital 
+                            Melbourne before transitioning to General Practice.</p>
+                </div>
+                <div class="container">
+                    <img src="/images/kio.jpg" alt="an image of Ms Kiyoko Tsu">
+                        <h2>Ms Kiyoko Tsu</h2>
+                        <p>Kiyoko Tsu completed her Bachelor of Nursing at the Yong Loo Lin School of Medicine in Singapor e in 
+                            2019. </p>
+                        <p>She is an accredited Nurse Immuniser and has worked in various hospitals within metropolitan 
+                            Melbourne.</p>
+                </div>
+            </div>
+          </article>
+          <article id="contacs">
+            <div class="title"><h1>Contacts</h1></div>
+            <div class="booking">
+                <p>
+                We hope to provide the highest level of care and continuity of care to our patients. Please let the reception staff know if you have any problems or suggestions in which we can which we can better our services.</p>
+                <p>Make a booking online now</p>
+                <li><a href="booking.html">BOOK NOW</a></li>
+            </div>
+          </article>
+          
+    </main>
+    <footer>
+        <div>
+            <p>Copy Right &copy Russel Street Dentis</p>
+            <p>Phone Number : 0450 xxxxxx</p>
+            <p>Email Address: xxxx@xxxxx</p>
+            <p>Quan Tan Bui</p>
+            <p>S3948578</p>
+
+        </div>
+    </footer>
+    <script>
+     window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+    </script>
+</body>
+</html>
